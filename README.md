@@ -1,5 +1,5 @@
-# UAV-Description
+### UAV-Description
 
-The URDF combining uav base and realsense is under **uav_description/urdf/uav_with_realsense_gazebo.xacro** 
+The model combining uav base and realsense d435i is under **uav_description/urdf/uav_with_realsense_gazebo.xacro** 
 
-where it uses *uav_base_gazebo.xacro* and *sensors/realsense_gazebo.xacro*
+where it uses ***uav_base_gazebo.xacro*** and ***sensors/realsense_gazebo.xacro***
