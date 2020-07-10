@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="m100withd435i" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find uav_description)/urdf/uav_base_gazebo.xacro" />
+    <xacro:include filename="$(find uav_description)/urdf/sensors/realsense_gazebo.xacro" />
+
+    <xacro:property name="front_d435i_offset_x" value="0.15" />
+    <xacro:property name="front_d435i_offset_z" value="0.08" />
+    <xacro:property name="back_d435i_offset_x" value="-0.15" />
+    <xacro:property name="back_d435i_offset_z" value="0.08" />
+
+    <!-- realsense pluggin -->
+    <joint name="front_d435i_joint" type="fixed">
+        <!-- <origin xyz="${front_d435i_offset_x} 0 ${front_d435i_offset_z}" rpy="0 1.57 0" /> -->
+        <origin xyz="${front_d435i_offset_x} 0 ${front_d435i_offset_z}" rpy="0 1.57 0" />
+        <parent link="base_link"/>
+        <child link="front_d435i_link"/>
+    </joint>
+
+    <joint name="back_d435i_joint" type="fixed">
+        <origin xyz="${back_d435i_offset_x} 0 ${back_d435i_offset_z}" rpy="3.14 1.57 0" />
+        <parent link="base_link"/>
+        <child link="back_d435i_link"/>
+    </joint>
+
+    <xacro:d435i_camera prefix="front_d435i"/>
+    <xacro:d435i_camera prefix="back_d435i"/>
+    <xacro:m100_base/>
+</robot>
+
+
+
+
+
+
+
+
